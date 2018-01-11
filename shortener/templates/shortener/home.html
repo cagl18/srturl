@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<style type="text/css">
+	body{
+		/*background-image: url('https://interfacelift.com/wallpaper/7yz4ma1/04122_eno_2880x1800.jpg');*/ /*retina dis*/
+		{% if bg_image %}background-image: url({{ bg_image }}); {% endif %}/*1920x1200*/ 
+		/*background-image: url('https://interfacelift.com/wallpaper/7yz4ma1/    04126_theoverlookoflakelucern_2880x1800.jpg');*/
+		/*background-image: url('https://interfacelift.com/wallpaper/7yz4ma1/04139_thefreshairofsaentismountain_2880x1800.jpg');*/
+		/*background-image: url('http://interfacelift.com/wallpaper/D78c559a/04134_sassolungo_2880x1800.jpg');*/
+	}
+    /*@media only screen and (min-device-width : 768px) {
+		main
+		{
+			margin-top:-250px;
+		}
+	}
+	@media only screen and (min-device-width: 320px) and (max-device-height: 767px){
+		 main
+			{
+				margin-top:110px !important;
+			}
+	}*/
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class='text-center col-sm-12'>
+			<h1 class="cover-heading">{{ title }}</h1>
+			<p class="lead">Shorten that URL</p>
+			<div class='col-sm-8 offset-sm-2'>
+				<form method='POST' Action='.'> {% csrf_token %}
+					<!-- <input type='text' name='url' placeholder='Shorten your URL like www.example.com' /> -->
+					{{ form.as_p }}
+					<input class="btn btn-primary" type='submit' value='Shorten &raquo;' />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+

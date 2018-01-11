@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{ object.shortcode }} | {{ block.super }}
+{% endblock title %}
+
+{% block styles %}
+	{{ block.super }}
+	<style type="text/css">
+		body{
+			{% if bg_image %}
+				background-image: url({{ bg_image }}); 
+			{% endif %}
+		}
+		/*.btn-link{
+			color: #fff;
+		}
+		.btn-link:hover {
+		    color: #84baff;
+		}*/
+	</style>
+{% endblock styles %}
+
+{% block content %}
+<div>
+
+	<h1>Created!</h1>
+	<p>{{ object.url }}</p>
+
+	<p><a class="btn btn-link" href="{{ object.get_short_url }}">{{ object.get_short_url }}</a></p>
+	<a class="btn btn-light" href="/" role="button">+ New</a>
+</div>
+{% endblock content %}
