@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party
-    'django_hosts',
+    #'django_hosts',
     #custom app
     'shortener',
     'analytics',
