@@ -60,7 +60,7 @@ ROOT_URLCONF = 'srturl.urls'
 ROOT_HOSTCONF = 'srturl.hosts'
 DEFAULT_HOST = 'www'
 DEFAULT_REDIRECT_URL = 'http://srturl.herokuapp.com'#'http://www.srturl.com' #srturl
-PARENT_HOST = 'srturl.herokuapp.com'#'srturl.com'
+#PARENT_HOST = 'srturl.herokuapp.com'#'srturl.com'
 
 TEMPLATES = [
     {
