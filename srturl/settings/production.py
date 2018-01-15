@@ -58,7 +58,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'srturl.urls'
 ROOT_HOSTCONF = 'srturl.hosts'
-DEFAULT_HOST = 'www' 
+DEFAULT_HOST = 'www'  
 DEFAULT_REDIRECT_URL = 'srturl.herokuapp.com'#'http://www.srturl.com' #srturl
 PARENT_HOST = 'srturl.herokuapp.com'#'srturl.com'
 
