@@ -5,7 +5,7 @@ staticfiles
 .env
 
 srturl/settings/local.py
-
+srturl/settings/carlos_settings.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
