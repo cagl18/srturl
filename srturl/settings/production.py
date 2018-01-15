@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = '^$_nb)hum1hs(=e9u@c&a+a-e%su=06dsj*zm*!-ljp+(wokzz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True #False
 
 ALLOWED_HOSTS = ['*']#['0.0.0.0','srturl.herokuapp.com','https://srturl.herokuapp.com'] #'www.srturl.com','srturl.com',
 
@@ -59,8 +59,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'srturl.urls'
 ROOT_HOSTCONF = 'srturl.hosts'
 DEFAULT_HOST = 'www' 
-DEFAULT_REDIRECT_URL = 'https://srturl.herokuapp.com'#'http://www.srturl.com' #srturl
-PARENT_HOST = 'srturl.herokuapp.com'#'srturl.com'
+DEFAULT_REDIRECT_URL = 'srturl.herokuapp.com'#'http://www.srturl.com' #srturl
+#PARENT_HOST = 'srturl.herokuapp.com'#'srturl.com'
 
 TEMPLATES = [
     {
