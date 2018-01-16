@@ -56,8 +56,12 @@ class Srturl(models.Model):
 		return str(self.url)
 
 	def get_short_url(self):
-		url_path = reverse("scode", kwargs ={"shortcode": self.shortcode}, host="www", scheme='http')
+		url_path = reverse("scode", kwargs ={"shortcode": self.shortcode})
+		#url_path = reverse("scode", kwargs ={"shortcode": self.shortcode}, host="www", scheme='http')
 		return url_path   #{shortcode}".format(shortcode=self.shortcode)
+
+	#def get_short_url(self):
+		#return reverse('shortener:redirect', kwargs={'shortcode': self.shortcode})
 
 
 
