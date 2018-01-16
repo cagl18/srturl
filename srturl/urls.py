@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view()),
     url(r'^(?P<shortcode>[\w-]+)/$', URLRedirectView.as_view(), name='scode'),
-]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]  
+
+urlpatterns += url.static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
