@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 from shortener.views import URLRedirectView, HomeView
 
@@ -9,4 +10,4 @@ urlpatterns = [
     url(r'^(?P<shortcode>[\w-]+)/$', URLRedirectView.as_view(), name='scode'),
 ]  
 
-urlpatterns += url.static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
