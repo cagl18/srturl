@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.conf import settings
+from django.contrib.sites.shortcuts import get_current_site
 from analytics.models import ClickEvent
 from .forms import SubmitUrlForm
 from .models import Srturl
@@ -43,6 +44,7 @@ class HomeView(View):
 			context = {
 				"object": obj, 
 				"created": created,
+				"shorturl": "{0}/{1}".format(get_current_site(request),obj.shortcode)
 			}
 			if created:
 				template = "shortener/success.html"

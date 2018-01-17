@@ -23,7 +23,7 @@
 	<h1>Already Exist</h1>
 	<p>{{ object.url }}</p>
 
-	<p><a class="btn btn-link" href="{{ object.get_short_url }}">{{ object.get_short_url }}</a></p>
+	<p><a class="btn btn-link" href="{{ object.get_short_url }}">{{ shorturl }}</a></p>
 	{% if object.clickevent %} <p>Count: {{ object.clickevent.count }}</p> {% endif %}
 	<a class="btn btn-light" href="/" role="button">+ New</a>
 
