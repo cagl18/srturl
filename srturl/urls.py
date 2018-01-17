@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^(?P<shortcode>[\w-]+)/$', URLRedirectView.as_view(), name='scode'),
 ]  
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
