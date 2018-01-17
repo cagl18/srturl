@@ -19,7 +19,7 @@ class ClickEvent(models.Model):
 	objects			= ClickEventManager()
 
 	def __str__(self): #python3
-		return '{i}'.format(i=self.count)
+		return '{i}'.format(i=self.srt_url)
 
 	def __unicode__(self): #python2
-		return '{i}'.format(i=self.count)
+		return '{i}'.format(i=self.srt_url)
