@@ -27,17 +27,17 @@ def create_shortcode(instance, size=SHORTCODE_MIN):
 
 def add_url_prefix(url):
 	regex = re.compile(r"http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|www\.")
-	clean_url = url.lower()
-	if url:
-		if "http" in url and not "https" in url:
+	lower_url = url.lower()
+	if lower_url:
+		if "http" in lower_url and "https" not in lower_url:
 			replace_with = "http://www."
-			url = re.sub(regex, replace_with, url)
+			lower_url = re.sub(regex, replace_with, lower_url)
 		else:
 			replace_with = "https://www."
-			url = re.sub(regex, replace_with, url)
-			if not "www" in url or not "http" in url:
-				url = replace_with + url
-	return url
+			lower_url = re.sub(regex, replace_with, lower_url)
+			if not "www" in lower_url or "http" not in lower_url:
+				lower_url = replace_with + lower_url
+	return lower_url
 
 # def add_url_prefix(url):
 # 	if url:
@@ -53,26 +53,16 @@ def add_url_prefix(url):
 # 		url = new_url
 # 	return url
 
-
-# from shortener.models import Srturl
-# from shortener.utils import add_url_prefix
-# url = 'https://www.aol.com'
-# new_url = add_url_prefix(url)
-# #obj, created = Srturl.objects.get_or_create(url=new_url)
-# obj, created = Srturl.objects.get_or_create(url=url)
-# print(obj)
-
-
-# add_prefix_url('www.google.com/images')
-# add_prefix_url('google.com/images')
-# add_prefix_url('httP://google.com/images')
-# add_prefix_url('httP://gooGle.cOm/images')
-# add_prefix_url('httPs://gooGle.cOm/images')
-# add_prefix_url('httPs://WwW.gooGle.cOm/images')
-# add_prefix_url('httP://WwW.gooGle.cOm/images')
-# add_prefix_url('WwW.gooGle.cOm/images')
-# add_prefix_url('HtTp.gooGle.cOm/images')
-# add_prefix_url('HtTp://gooGle.cOm/images')
+# add_url_prefix('www.google.com/images')
+# add_url_prefix('google.com/images')
+# add_url_prefix('httP://google.com/images')
+# add_url_prefix('httP://gooGle.cOm/images')
+# add_url_prefix('httPs://gooGle.cOm/images')
+# add_url_prefix('httPs://WwW.gooGle.cOm/images')
+# add_url_prefix('httP://WwW.gooGle.cOm/images')
+# add_url_prefix('WwW.gooGle.cOm/images')
+# add_url_prefix('HtTp.gooGle.cOm/images')
+# add_url_prefix('HtTp://gooGle.cOm/images')
 
 
 # url = re.compile(r"http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|www\.")
