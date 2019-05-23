@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
+from decouple import config, Csv
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,11 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '^$_nb)hum1hs(=e9u@c&a+a-e%su=06dsj*zm*!-ljp+(wokzz'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #False
-
-ALLOWED_HOSTS = ['srturl.herokuapp.com']#['0.0.0.0','srturl.herokuapp.com','https://srturl.herokuapp.com'] #'www.srturl.com','srturl.com',
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+DEBUG = config('DEBUG', default=False, cast=bool) 
 
 # Application definition
 
