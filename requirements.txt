@@ -6,7 +6,7 @@ django-hosts==3.0
 gunicorn==19.7.1
 idna==2.6
 requests==2.18.4
-urllib3==1.22
+urllib3==1.24.2
 whitenoise==3.3.1
 psycopg2==2.7
 python-decouple==3.1
